@@ -1,6 +1,7 @@
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const space = Space_Grotesk({ subsets: ["latin"] });
 
@@ -12,10 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${space.className} bg-slate-50 dark:bg-slate-800`}>
-        <Header />
-        {children}
-      </body>
+      <ClerkProvider>
+        <body className={`${space.className} bg-slate-50 dark:bg-slate-800`}>
+          <Header />
+          {children}
+        </body>
+      </ClerkProvider>
     </html>
   );
 }

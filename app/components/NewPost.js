@@ -25,7 +25,7 @@ const NewPost = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center my-8">
+    <div className="max-w-screen-xl mx-auto flex items-center justify-center my-8">
       <form className="w-1/2" onSubmit={handleSubmit}>
         <div>
           <input
